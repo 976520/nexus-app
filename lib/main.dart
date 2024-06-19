@@ -21,11 +21,10 @@ class App extends StatelessWidget {
       home: Scaffold(
         appBar: Header(),
         body: Column(
-          verticalDirection: VerticalDirection.up,
           children: <Widget>[
-            FootNavigator()
           ],
         ),
+        bottomNavigationBar: FootNavigator(),
       ),
     );
   }
