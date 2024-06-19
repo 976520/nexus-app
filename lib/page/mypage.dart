@@ -18,7 +18,7 @@ class MyPage extends StatelessWidget {
                   Expanded(child: Container(
                     width: double.infinity,
                     color: Colors.white,
-                    child: Center(child: Text('Your name', style: Theme.of(context).textTheme.titleLarge))
+                    child: Center(child: Text('유지헌', style: Theme.of(context).textTheme.titleLarge))
                   )),
                 ],
               ),
