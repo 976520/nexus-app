@@ -14,12 +14,23 @@ class MyPage extends StatelessWidget {
             children: [
               Column(
                 children: [
-                  Expanded(child: Container(color: Colors.amber,)),
-                  Expanded(child: Container(
-                    width: double.infinity,
-                    color: Colors.white,
-                    child: Center(child: Text('유지헌', style: Theme.of(context).textTheme.titleLarge))
-                  )),
+                  Expanded(
+                    child: Container(
+                      color: Colors.amber,
+                    ),
+                  ),
+                  Expanded(
+                    child: Container(
+                      width: double.infinity,
+                      color: Colors.white,
+                      child: Center(
+                        child: Text(
+                          '유지헌',
+                          style: Theme.of(context).textTheme.titleLarge,
+                        ),
+                      ),
+                    ),
+                  ),
                 ],
               ),
               Center(
@@ -29,11 +40,11 @@ class MyPage extends StatelessWidget {
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(100),
                   ),
-                  child: const Icon(Icons.person_outline, size: 75)
+                  child: const Icon(Icons.person_outline, size: 75),
                 ),
               )
             ],
-          )
+          ),
         ),
       ],
     );

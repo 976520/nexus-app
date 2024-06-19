@@ -24,9 +24,10 @@ class App extends StatelessWidget {
         scaffoldBackgroundColor: Colors.white,
         textTheme: const TextTheme(
           titleLarge: TextStyle(
-              fontSize: 24.0,
-              fontWeight: FontWeight.bold,
-              color: Color.fromRGBO(0x20, 0x20, 0x20, 1)),
+            fontSize: 24.0,
+            fontWeight: FontWeight.bold,
+            color: Color.fromRGBO(0x20, 0x20, 0x20, 1),
+          ),
         ),
       ),
       home: Scaffold(
