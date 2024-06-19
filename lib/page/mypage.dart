@@ -101,11 +101,22 @@ class MyPage extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.only(top: 20, left: 20,right: 20),
           child: Row(
-            
             children: [
               Text('최근 활동', style: Theme.of(context).textTheme.titleMedium),
               Icon(Icons.history, color: Colors.grey[600])
             ],
+          ),
+        ),
+        Expanded(
+          child: ListView.builder(
+            itemCount: 10,
+            itemBuilder: (context, index) {
+              return ListTile(
+                leading: const Icon(Icons.history),
+                title: Text('활동 $index'),
+                subtitle: Text('활동 내용 $index'),
+              );
+            },
           ),
         ),
       ],
