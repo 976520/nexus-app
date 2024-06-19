@@ -8,11 +8,8 @@ class MyPage extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: <Widget>[
-        Container(
+        SizedBox(
           height: 300,
-          decoration: BoxDecoration(
-            color: Colors.blue[400],
-          ),
           child: Stack(
             children: [
               Column(
@@ -37,6 +34,27 @@ class MyPage extends StatelessWidget {
               )
             ],
           )
+        ),
+        Expanded(
+          child: ListView(
+            children: [
+              ListTile(
+                title: const Text('Your Profile'),
+                leading: const Icon(Icons.person),
+                onTap: () => Navigator.pushNamed(context, '/profile'),
+              ),
+              ListTile(
+                title: const Text('Your Projects'),
+                leading: const Icon(Icons.folder),
+                onTap: () => Navigator.pushNamed(context, '/projects'),
+              ),
+              ListTile(
+                title: const Text('Settings'),
+                leading: const Icon(Icons.settings),
+                onTap: () => Navigator.pushNamed(context, '/settings'),
+              ),
+            ],
+          ),
         ),
       ],
     );
