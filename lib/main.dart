@@ -22,11 +22,20 @@ class App extends StatelessWidget {
       theme: ThemeData(
         primaryColor: Colors.blue[600],
         scaffoldBackgroundColor: Colors.white,
-        textTheme: const TextTheme(
-          titleLarge: TextStyle(
+        textTheme: TextTheme(
+          titleLarge: const TextStyle(
             fontSize: 24.0,
             fontWeight: FontWeight.bold,
             color: Color.fromRGBO(0x20, 0x20, 0x20, 1),
+          ),
+          titleMedium: const TextStyle(
+            fontSize: 16.0,
+            fontWeight: FontWeight.bold,
+            color: Color.fromRGBO(0x20, 0x20, 0x20, 1),
+          ),
+          labelSmall: TextStyle(
+            fontSize: 14.0,
+            color: Colors.grey[600],
           ),
         ),
       ),
