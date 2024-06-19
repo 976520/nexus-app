@@ -21,7 +21,7 @@ class App extends StatelessWidget {
       title: 'Nexus App',
       theme: ThemeData(
         primaryColor: Colors.blue[600],
-        scaffoldBackgroundColor: Colors.grey[200],
+        scaffoldBackgroundColor: Colors.white,
         textTheme: const TextTheme(
           titleLarge: TextStyle(
               fontSize: 24.0,
