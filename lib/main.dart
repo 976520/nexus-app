@@ -1,7 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:nexus/page/home.dart';
+import 'package:nexus/page/mypage.dart';
+import 'package:nexus/page/project.dart';
+import 'package:nexus/provider/provider.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const App());
+  runApp(ChangeNotifierProvider(
+    create: (context) => CurrentPageProvider(),
+    child: const App(),
+  ));
 }
 
 class App extends StatelessWidget {
@@ -10,26 +18,35 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Nexus App',
       theme: ThemeData(
         primaryColor: Colors.blue[600],
-        primaryColorDark: Colors.black54,
+        scaffoldBackgroundColor: Colors.grey[200],
         textTheme: const TextTheme(
-          titleLarge: TextStyle(fontSize: 24.0, fontWeight: FontWeight.bold, color: Color.fromRGBO(0x20, 0x20, 0x20,1)),
+          titleLarge: TextStyle(
+              fontSize: 24.0,
+              fontWeight: FontWeight.bold,
+              color: Color.fromRGBO(0x20, 0x20, 0x20, 1)),
         ),
       ),
       home: Scaffold(
-        appBar: Header(),
-        body: Column(
-          children: <Widget>[
-          ],
+        appBar: const Header(),
+        body: Consumer<CurrentPageProvider>(
+          builder: (context, currentPageProvider, child) {
+            return [
+              HomePage(),
+              ProjectPage(),
+              MyPage(),
+            ][currentPageProvider.currentPage];
+          },
         ),
-        bottomNavigationBar: FootNavigator(),
+        bottomNavigationBar: const FootNavigator(),
       ),
     );
   }
 }
-class Header extends StatelessWidget implements PreferredSizeWidget{
+
+class Header extends StatelessWidget implements PreferredSizeWidget {
   const Header({super.key});
 
   @override
@@ -52,8 +69,8 @@ class FootNavigator extends StatefulWidget {
   @override
   _FootNavigatorState createState() => _FootNavigatorState();
 }
+
 class _FootNavigatorState extends State<FootNavigator> {
-  int currentPage = 0;
   @override
   Widget build(BuildContext context) {
     // final ThemeData theme = Theme.of(context);
@@ -64,12 +81,10 @@ class _FootNavigatorState extends State<FootNavigator> {
         NavigationDestination(icon: Icon(Icons.person), label: "my page"),
       ],
       onDestinationSelected: (index) {
-        setState(() {
-          currentPage = index;
-        });
+        Provider.of<CurrentPageProvider>(context, listen: false)
+            .setCurrentPage(index);
       },
-      selectedIndex: currentPage,
+      selectedIndex: Provider.of<CurrentPageProvider>(context).currentPage,
     );
   }
-
 }
