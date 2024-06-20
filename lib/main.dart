@@ -20,6 +20,7 @@ class App extends StatelessWidget {
     return MaterialApp(
       title: 'Nexus App',
       theme: ThemeData(
+        useMaterial3: true,
         primaryColor: Colors.blue[600],
         scaffoldBackgroundColor: Colors.white,
         textTheme: TextTheme(
