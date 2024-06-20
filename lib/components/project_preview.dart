@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nexus/util/gap.dart';
 
 class Project {
   final String name;
@@ -20,37 +21,47 @@ class ProjectPreview extends StatelessWidget {
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
     return Container(
-      width: size.width * 0.7,
-      height: size.width * 0.3,
-      decoration: BoxDecoration(
-        border: Border.all(color: Colors.grey[300]!),
-        borderRadius: BorderRadius.circular(10),
-      ),
-      child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-        child: Column(
-          children: [
-            Text(
-              project.name,
-              style: Theme.of(context).textTheme.titleMedium,
-            ),
-            Text(
-              project.description,
-              style: Theme.of(context).textTheme.labelSmall,
-            ),
-            ElevatedButton(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.end,
+        width: size.width * 0.7,
+        decoration: BoxDecoration(
+          border: Border.all(color: Colors.grey[300]!),
+          borderRadius: BorderRadius.circular(10),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+          child: Column(
+            children: [
+              Text(
+                project.name,
+                style: Theme.of(context).textTheme.titleMedium,
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 10),
+                child: Text(
+                  project.description,
+                  style: Theme.of(context).textTheme.labelSmall,
+                  overflow: TextOverflow.ellipsis,
+                  maxLines: 2,
+                ),
+              ),
+              Gap(20),
+              Row(
                 children: [
-                  const Icon(Icons.star, color: Colors.amber),
-                  Text(project.stars.toString()),
+                  ElevatedButton(
+                    onPressed: () {},
+                    child: Row(
+                      children: [
+                        Icon(
+                          Icons.star,
+                          color: Colors.amber,
+                        ),
+                        Text(project.stars.toString()),
+                      ],
+                    ),
+                  ),
                 ],
               ),
-              onPressed: () {},
-            ),
-          ],
-        ),
-      )
-    );
+            ],
+          ),
+        ));
   }
 }
