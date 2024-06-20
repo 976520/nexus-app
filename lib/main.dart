@@ -30,7 +30,7 @@ class App extends StatelessWidget {
             color: Color.fromRGBO(0x20, 0x20, 0x20, 1),
           ),
           titleMedium: const TextStyle(
-            fontSize: 16.0,
+            fontSize: 18.0,
             fontWeight: FontWeight.bold,
             color: Color.fromRGBO(0x20, 0x20, 0x20, 1),
           ),
@@ -64,9 +64,11 @@ class Header extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     final ThemeData theme = Theme.of(context);
     return AppBar(
-      title: Text('Nexus', style: theme.textTheme.titleLarge),
+      title: Text(
+        'Nexus',
+        style: theme.textTheme.titleLarge,
+      ),
       backgroundColor: theme.primaryColor,
-      centerTitle: true,
     );
   }
 
