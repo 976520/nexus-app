@@ -11,15 +11,17 @@ class ProjectPage extends StatefulWidget {
 }
 
 class _ProjectPageState extends State<ProjectPage> {
-  final List<int> _items = List<int>.generate(10, (index) => Random(index).nextInt(100));
+  final List<int> _items =
+      List<int>.generate(10, (index) => Random(index).nextInt(100));
   @override
   Widget build(BuildContext context) {
     final ScrollController scrollController = ScrollController();
     scrollController.addListener(() {
-    if (scrollController.position.pixels ==
+      if (scrollController.position.pixels ==
           scrollController.position.maxScrollExtent) {
         setState(() {
-          _items.addAll(List<int>.generate(10, (index) => Random(index).nextInt(100)));
+          _items.addAll(
+              List<int>.generate(10, (index) => Random(index).nextInt(100)));
         });
       }
     });
@@ -34,7 +36,8 @@ class _ProjectPageState extends State<ProjectPage> {
           return ProjectPreview(
             project: Project(
               name: 'Project $index',
-              description: 'This is a project description asdsadasdadddadsaddsdaasdasdadsadsadasasdsadadadadad',
+              description:
+                  'This is a project description asdsadasdadddadsaddsdaasdasdadsadsadasasdsadadadadad',
               stars: _items[index],
             ),
           );
