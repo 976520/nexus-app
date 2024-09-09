@@ -22,7 +22,7 @@ class App extends StatelessWidget {
       title: 'Nexus App',
       theme: ThemeData(
         useMaterial3: true,
-        primaryColor: Colors.blue[600],
+        primaryColor: Colors.white,
         scaffoldBackgroundColor: Colors.white,
         textTheme: TextTheme(
           titleLarge: const TextStyle(
@@ -46,9 +46,9 @@ class App extends StatelessWidget {
         body: Consumer<CurrentPageProvider>(
           builder: (context, currentPageProvider, child) {
             return [
-              HomePage(),
-              ProjectPage(),
-              MyPage(),
+              const HomePage(),
+              const ProjectPage(),
+              const MyPage(),
             ][currentPageProvider.currentPage];
           },
         ),
@@ -65,9 +65,17 @@ class Header extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     final ThemeData theme = Theme.of(context);
     return AppBar(
-      title: Text(
-        'Nexus',
-        style: theme.textTheme.titleLarge,
+      title: Row(
+        children: [
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(Icons.menu),
+          ),
+          Text(
+            'Nexus',
+            style: theme.textTheme.titleMedium,
+          ),
+        ],
       ),
       backgroundColor: theme.primaryColor,
     );

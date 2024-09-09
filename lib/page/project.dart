@@ -26,11 +26,7 @@ class _ProjectPageState extends State<ProjectPage> {
       }
     });
     return Padding(
-      padding: const EdgeInsets.only(
-        top: 20,
-        left: 40,
-        right: 40,
-      ),
+      padding: const EdgeInsets.only(top: 20, left: 40, right: 40),
       child: ListView.separated(
         itemBuilder: (context, index) {
           return ProjectPreview(

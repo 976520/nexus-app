@@ -43,14 +43,14 @@ class ProjectPreview extends StatelessWidget {
                   maxLines: 2,
                 ),
               ),
-              Gap(20),
+              const Gap(20),
               Row(
                 children: [
                   ElevatedButton(
                     onPressed: () {},
                     child: Row(
                       children: [
-                        Icon(
+                        const Icon(
                           Icons.star,
                           color: Colors.amber,
                         ),

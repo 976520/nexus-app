@@ -19,11 +19,10 @@ class MyPage extends StatelessWidget {
                     child: Container(
                       decoration: const BoxDecoration(
                         gradient: LinearGradient(
-                          begin: Alignment.bottomCenter,
-                          end: Alignment.topCenter,
-                          colors: [Colors.white, Colors.amber],
-                          stops: [0.0, 0.7]
-                        ),
+                            begin: Alignment.bottomCenter,
+                            end: Alignment.topCenter,
+                            colors: [Colors.white, Colors.amber],
+                            stops: [0.0, 0.7]),
                       ),
                     ),
                   ),
@@ -60,7 +59,8 @@ class MyPage extends StatelessWidget {
           ),
         ),
         Padding(
-          padding: const EdgeInsets.only(left: 30, top: 0, right: 30, bottom: 30),
+          padding:
+              const EdgeInsets.only(left: 30, top: 0, right: 30, bottom: 30),
           child: Text(
             '(전) 자랑스러운 광주 소프트웨어 마이스터 고등학교 학생으로 1학년 1반 친구들의 리더입니다.',
             style: Theme.of(context).textTheme.labelSmall,
@@ -99,7 +99,7 @@ class MyPage extends StatelessWidget {
           ),
         ),
         Padding(
-          padding: const EdgeInsets.only(top: 20, left: 20,right: 20),
+          padding: const EdgeInsets.only(top: 20, left: 20, right: 20),
           child: Row(
             children: [
               Text('최근 활동', style: Theme.of(context).textTheme.titleMedium),
