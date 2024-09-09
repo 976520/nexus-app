@@ -72,7 +72,7 @@ class Header extends StatelessWidget implements PreferredSizeWidget {
             icon: const Icon(Icons.menu),
           ),
           Text(
-            'Nexus',
+            'NEXUS',
             style: theme.textTheme.titleMedium,
           ),
         ],
